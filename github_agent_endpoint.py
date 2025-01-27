@@ -103,8 +103,8 @@ async def store_message(session_id: str, message_type: str, content: str, data: 
 
 @app.post("/api/pydantic-github-agent", response_model=AgentResponse)
 async def github_agent_endpoint(
-    request: AgentRequest,
-    authenticated: bool = Depends(verify_token)
+    request: AgentRequest#,
+    #authenticated: bool = Depends(verify_token)
 ):
     try:
         # Fetch conversation history
